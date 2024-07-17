@@ -1,0 +1,195 @@
+/* src/leaderboard.css */
+.leaderboard-container {
+  width: 90%;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  width: 60%;
+}
+.input {
+  width: 30%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; /* Needed for sticky positioning */
+  left: 5%;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 10px;
+  width: 100%;
+  background-image: url("../assets/image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: inherit;
+}
+
+.imageBackground {
+  padding: 10px;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  border-radius: 0px 0px 50px 0px;
+  margin-bottom: 5px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.leaderboard-item.header {
+  background-color: transparent;
+  border-bottom: 2px solid #ddd;
+}
+
+p,
+h1 {
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 900;
+}
+
+h1 {
+  color: black;
+  font-size: larger;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  grid-gap: 10px;
+}
+.number {
+  background-color: black;
+  color: white;
+  width: 25px;
+  border-radius: 0px 0px 10px 0px;
+}
+.add-score-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-score-form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-score-form input {
+  padding: 5px;
+  flex: 1;
+}
+
+.add-score-form button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  background-image: url("../assets/img.png");
+  background-size: cover;
+  background-position: center;
+}
+.scrolling-footer {
+  height: 70vh;
+  /* overflow: hidden; */
+  /* position: relative; */
+}
+
+.scrolling-footer img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 820px) {
+  .leaderboard-container {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .input{
+    position: relative;
+    height: auto;
+    padding: 10%;
+    width: 90%;
+  
+  }
+  .content{
+    width: 100%;
+  }
+
+  .leaderboard-item {
+    font-size: 14px;
+  }
+
+  .add-score-form button {
+    padding: 8px;
+  }
+}
+/* src/leaderboard.css */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+/* src/leaderboard.css */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scale-up {
+  animation: scaleUp 0.5s ease-out !important;
+  background-color: red !important;
+}
