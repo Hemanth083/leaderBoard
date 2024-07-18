@@ -48,10 +48,8 @@ const Leaderboard: React.FC = () => {
         "https://media.wired.com/photos/6557e61b8ba298d25d23d7f5/16:9/w_2400,h_1350,c_limit/Inside-The-Race-to-Secure-the-Formula-1-Las-Vegas-Grand-Prix-Security-GettyImages-1787267227.jpg"
     ];
 
-    // State to manage current image index for scrolling footer carousel
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // Effect to automatically transition images every few seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);

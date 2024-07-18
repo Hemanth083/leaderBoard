@@ -13,14 +13,14 @@
   width: 60%;
 }
 .input {
-  width: 30%;
+  width: 15%;
   height: 100vh;
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 0; /* Needed for sticky positioning */
-  left: 5%;
-  display: none;
+  top: 15%; /* Needed for sticky positioning */
+  left: 3%;
+  /* display: none; */
 }
 
 .leaderboard-list {
@@ -194,18 +194,21 @@ h1 {
     justify-content: center;
     width: 100%;
     position: relative;
+        overflow-x: hidden;
+
   }
   .leaderboard-list {
     padding: 0%;
     width: 100vw;
-    margin-bottom: 30vh;
+    /* margin-bottom: 30vh; */
   }
 
   .input {
     position: relative;
     height: auto;
-    padding: 10%;
-    width: 90%;
+    padding: 9%;
+    width: 80%;
+    margin-bottom: 30vh;
   }
   .content {
     width: 100%;
