@@ -100,7 +100,7 @@ const Leaderboard: React.FC = () => {
                     <div className="add-score-form">
                         <input
                             type="text"
-                            placeholder="Username"
+                            placeholder="Name"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
