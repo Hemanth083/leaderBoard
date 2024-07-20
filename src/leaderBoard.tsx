@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './store/store';
 import { FaUser, FaStopwatch } from 'react-icons/fa';
 import { addScore } from './store/leaderboardSlice';
-import './leaderBorad.css'; // Adjust CSS file name as per your project
+import './leaderBorad.css'; 
+
 
 const Leaderboard: React.FC = () => {
     const scores = useSelector((state: RootState) => state.leaderboard.scores);
@@ -12,7 +13,6 @@ const Leaderboard: React.FC = () => {
     const [score, setScore] = useState('');
     const [newScoreId, setNewScoreId] = useState<string | null>(null);
 
-    // Function to handle adding a new score
     const handleAddScore = () => {
         const [minutes, seconds, milliseconds] = score.split(':').map(Number);
         const totalMilliseconds = (minutes * 60 * 1000) + (seconds * 1000) + milliseconds;
@@ -27,7 +27,7 @@ const Leaderboard: React.FC = () => {
 
         setTimeout(() => {
             setNewScoreId(null);
-        }, 1000);
+        }, 9000);
     };
 
     // Function to generate unique IDs for scores
@@ -53,7 +53,7 @@ const Leaderboard: React.FC = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-        }, 1000); // Change image every 4 seconds
+        }, 9000); // Change image every 4 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -71,16 +71,15 @@ const Leaderboard: React.FC = () => {
             <div className="leaderboard-container">
                 <div className='content'>
                     <div className='nav'>
-                        <h1>FASTEST OF TODAY</h1>
-                        <li className='leaderboard-item header'>
+                        <li className='leaderboard-item header' style={{height:"100%"}}>
                             <div className='align'><FaUser className="icon" /> <h1>Name</h1> </div>
                             <div className='align'><FaStopwatch className="icon" /> <h1>Time</h1></div>
                         </li>
                     </div>
-                    <ul className="leaderboard-list">
+                    <div className="leaderboard-list">
                         <div className='imageBackground'>
                             {scores.map((score) => (
-                                <li
+                                <div
                                     key={score.id}
                                     id={score.id}
                                     className={`leaderboard-item ${newScoreId === score.id ? 'scale-up' : ''}`}
@@ -91,10 +90,10 @@ const Leaderboard: React.FC = () => {
                                         <p>{score.username}</p>
                                     </div>
                                     <p>{formatScore(score.score)}</p>
-                                </li>
+                                </div>
                             ))}
                         </div>
-                    </ul>
+                    </div>
                 </div>
                 <div className='input'>
                     <div className="add-score-form">

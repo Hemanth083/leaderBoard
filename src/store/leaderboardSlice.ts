@@ -42,9 +42,9 @@ const leaderboardSlice = createSlice({
         addScore: (state, action: PayloadAction<Score>) => {
             state.scores.push(action.payload);
             state.scores.sort((a, b) => a.score - b.score);
-            if (state.scores.length > 10) {
-                state.scores.pop();
-            }
+            // if (state.scores.length > 10) {
+            //     state.scores.pop();
+            // }
         },
     },
 });
